@@ -5,14 +5,12 @@ theme_set(theme_bw())
 library(sf)
 
 # Create map from shapefile
-fr_sf <- st_read("/Users/hafeezulrzq/Documents/github_local/forestreserve_bn/QJIS files/polygon_forestreserves.shp")
-
-data(kpg_sf)
+fr_sf <- st_read("QJIS files")
 
 # Check fr_sf
-ggplot() +
-  geom_sf(data = shapefile) +
-  theme_void()
+ggplot(dis_sf) +
+  geom_sf() +
+  geom_sf(data = fr_sf, fill = "red3")
 
 ggplot(kpg_sf) +
   geom_sf(aes(fill = mukim), col = "gray50") +
